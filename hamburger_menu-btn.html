@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger Menu</title>
+    <style>
+        body {
+            text-align: center;
+            background: linear-gradient(45deg, rgba(255, 0, 0, 0.158), rgba(0, 128, 0, 0.137));
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: sans-serif;
+        }
+
+        h1 {
+            color: red;
+        }
+
+        h2 {
+            color: green;
+        }
+
+        .hamburger-menu {
+            position: relative;
+            height: 150px;
+            width: 150px;
+            background: transparent;
+            border: 5px solid #2e2e2e;
+            border-radius: 1rem;
+            cursor: pointer;
+        }
+
+        .hamburger-top,
+        .hamburger-middle,
+        .hamburger-bottom {
+            position: absolute;
+            top: 28%;
+            right: 15%;
+            height: 15px;
+            width: 100px;
+            background: #2e2e2e;
+            border-radius: 1rem;
+            transform: rotate(0);
+            transition: all .25s ease-in-out .25s;
+        }
+
+        .hamburger-middle {
+            transform: translateY(25px);
+        }
+
+        .hamburger-bottom {
+            transform: translateY(50px);
+        }
+
+        .toggle .hamburger-top {
+            transform: rotate(45deg) translateY(18px) translateX(18px);
+            background: #bb0000;
+        }
+
+        .toggle .hamburger-middle {
+            top: 32.5%;
+            right: 50%;
+            width: 0;
+            height: 0;
+            opacity: 0;
+            transition: .45s;
+        }
+
+        .toggle .hamburger-bottom {
+            transform: rotate(-45deg) translateY(18px) translateX(-18px);
+            background: #bb0000;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hamburger Menu button design and animation</h1>
+    <h2>By Ajmain Fayek</h2>
+
+    <button id="hamburger-menu" class="hamburger-menu">
+        <span class="hamburger-top"></span>
+        <span class="hamburger-middle"></span>
+        <span class="hamburger-bottom"></span>
+    </button>
+    <script>
+        const hamburger_menu = document.getElementById('hamburger-menu');
+        hamburger_menu.addEventListener('click', function () {
+            hamburger_menu.classList.toggle('toggle');
+        })
+    </script>
+
+</body>
+
+</html>
